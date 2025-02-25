@@ -9,7 +9,7 @@ import 'package:event_planning_app/ui/home/tab/profile_tab/profile_tab.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gap/gap.dart';
+
 import '../../../core/assets_manager.dart';
 
 class HomeScreen extends StatefulWidget {

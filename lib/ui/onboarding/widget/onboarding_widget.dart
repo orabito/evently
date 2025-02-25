@@ -11,31 +11,31 @@ class OnboardingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: Align(
+    return SingleChildScrollView(
+      child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Align(
             alignment: Alignment.center,
             child: SvgPicture.asset(
               image,
               fit: BoxFit.cover,
             ),
           ),
-        ),
-        Gap(24),
-        Text(
-          title,
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-        Gap(24),
-        Text(
-         textBody,
-          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-            fontSize: 20
+          Gap(24),
+          Text(
+            title,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
-        ),
-      ],
+          Gap(24),
+          Text(
+           textBody,
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              fontSize: 20
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,9 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../ui/create_event/screen/pick_location_screen.dart';
-import '../strings_manager.dart';
 
 class OutlineButtonWidget extends StatelessWidget {
    OutlineButtonWidget({super.key,required this.Onpressed,required this.icon,required this. child,this.iconForward});

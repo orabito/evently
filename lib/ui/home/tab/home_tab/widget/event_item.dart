@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:event_planning_app/core/assets_manager.dart';
 import 'package:event_planning_app/core/constans.dart';
-import 'package:event_planning_app/core/dialog_utils.dart';
+
 import 'package:event_planning_app/core/reusable_componets/firestore_handler.dart';
 import 'package:event_planning_app/models/event_model.dart';
 import 'package:event_planning_app/providers/theme_provider.dart';
@@ -85,6 +85,8 @@ class _EventItemState extends State<EventItem> {
                       child: Text(
                       widget.event.tittle??"",
                         style: Theme.of(context).textTheme.titleSmall,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
                       ),
                     ),
                     InkWell(

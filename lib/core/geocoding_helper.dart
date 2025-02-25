@@ -1,5 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:event_planning_app/core/strings_manager.dart';
+
 import 'package:geocoding/geocoding.dart';
 
 class GeocodingHelper {

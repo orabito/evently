@@ -31,7 +31,10 @@ class _CustomFieldState extends State<CustomField> {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged:(value) {
-       widget. onChanged!(value) ;
+        if (widget.onChanged != null) {
+          widget.onChanged!(value);
+        }
+
       } ,
       maxLines:widget.maxLine,
       autovalidateMode: AutovalidateMode.onUnfocus,

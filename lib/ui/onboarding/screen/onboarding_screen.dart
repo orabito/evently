@@ -6,7 +6,6 @@ import 'package:event_planning_app/models/onboarding_model.dart';
 import 'package:event_planning_app/providers/theme_provider.dart';
 import 'package:event_planning_app/ui/login/screen/login_screen.dart';
 import 'package:event_planning_app/ui/onboarding/widget/onboarding_widget.dart';
-import 'package:event_planning_app/ui/start_screen/widget/theme_toggle.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -65,7 +64,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 controller: pageController,
               ),
             ),
-            ThemeToggle(),
+
 
             Padding(
               padding: const EdgeInsets.all(16.0),

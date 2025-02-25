@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:event_planning_app/core/reusable_componets/custom_field.dart';
 import 'package:event_planning_app/core/strings_manager.dart';
-import 'package:event_planning_app/ui/start_screen/widget/toggle_language.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

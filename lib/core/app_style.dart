@@ -38,20 +38,20 @@ padding: EdgeInsets.all(15)
             color: ColorManager.lightTextFieldForm),
         titleMedium: TextStyle(
           fontWeight: FontWeight.w700,
-          fontSize: 20,
+          fontSize: 18,
           color: ColorManager.lightPrimary,
         ),
         titleSmall: TextStyle(
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: FontWeight.w500,
             color: ColorManager.lightSecondary),
         labelLarge: TextStyle(
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: FontWeight.w500,
             color: ColorManager.darkSecondary),
         headlineMedium: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 24,
+            fontSize: 20,
             color: ColorManager.background)),
     scaffoldBackgroundColor: ColorManager.background,
     appBarTheme: AppBarTheme(
@@ -62,7 +62,7 @@ padding: EdgeInsets.all(15)
         titleTextStyle: TextStyle(
           fontWeight: FontWeight.w400,
           color: ColorManager.lightSecondary,
-          fontSize: 22,
+          fontSize: 20,
         )),
     colorScheme: ColorScheme.light(
         // seedColor: ColorManager.background,
@@ -120,12 +120,12 @@ padding: EdgeInsets.all(15)
             fontWeight: FontWeight.w500,
             color: ColorManager.darkSecondary),
         labelLarge: TextStyle(
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: FontWeight.w500,
             color: ColorManager.lightSecondary),
         headlineMedium: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 24,
+            fontSize: 22,
             color: ColorManager.background)),
     scaffoldBackgroundColor: ColorManager.backgroundDark,
     appBarTheme: AppBarTheme(
@@ -134,7 +134,7 @@ padding: EdgeInsets.all(15)
       titleTextStyle: TextStyle(
         fontWeight: FontWeight.w400,
         color: ColorManager.darkPrimary,
-        fontSize: 22,
+        fontSize: 20,
       ),
       backgroundColor: Colors.transparent,
       centerTitle: true,

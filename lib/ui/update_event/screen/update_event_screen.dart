@@ -8,10 +8,9 @@ import 'package:event_planning_app/core/reusable_componets/custom_field.dart';
 import 'package:event_planning_app/core/reusable_componets/firestore_handler.dart';
 import 'package:event_planning_app/core/strings_manager.dart';
 import 'package:event_planning_app/models/event_model.dart';
-import 'package:event_planning_app/providers/event_provider.dart';
+
 import 'package:event_planning_app/providers/location_provider.dart';
-import 'package:event_planning_app/providers/location_provider.dart';
-import 'package:event_planning_app/providers/location_provider.dart';
+
 import 'package:event_planning_app/providers/theme_provider.dart';
 import 'package:event_planning_app/ui/create_event/screen/pick_location_screen.dart';
 import 'package:event_planning_app/ui/home/screen/home_screen.dart';
@@ -42,6 +41,7 @@ class _UpdateEventScreenState extends State<UpdateEventScreen> {
   late TextEditingController controller;
   late TextEditingController descController;
   GlobalKey<FormState>formKey = GlobalKey<FormState>();
+  bool _isInitialized = false;
 
   late EventModel? eventModel;
   @override
@@ -56,24 +56,30 @@ class _UpdateEventScreenState extends State<UpdateEventScreen> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    eventModel=ModalRoute.of(context)?.settings.arguments as EventModel?;
-    if(eventModel!=null){
-      controller=TextEditingController(text: eventModel?.tittle??"");
-      descController=TextEditingController(text: eventModel?.description??"");
-      selectedDate=DateTime.fromMillisecondsSinceEpoch(eventModel!.date!.millisecondsSinceEpoch);
-      selectedTime = TimeOfDay.fromDateTime(eventModel!.date!.toDate());
-      selectedIndex=selectedIndexOfCategory();
-
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        final locationProvider = Provider.of<LocationProvider>(context, listen: false);
-
-        if (eventModel!.lat != null && eventModel!.long != null) {
-
-          locationProvider.changeLocation( LatLng(eventModel!.lat !, eventModel!.long !));
 
 
-        }});
+    if(!_isInitialized){
+      eventModel=ModalRoute.of(context)?.settings.arguments as EventModel?;
+      if(eventModel!=null){
+        controller=TextEditingController(text: eventModel?.tittle??"");
+        descController=TextEditingController(text: eventModel?.description??"");
+        selectedDate=DateTime.fromMillisecondsSinceEpoch(eventModel!.date!.millisecondsSinceEpoch);
+        selectedTime = TimeOfDay.fromDateTime(eventModel!.date!.toDate());
+        selectedIndex=selectedIndexOfCategory();
 
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          final locationProvider = Provider.of<LocationProvider>(context, listen: false);
+
+          if (eventModel!.lat != null && eventModel!.long != null) {
+
+            locationProvider.changeLocation( LatLng(eventModel!.lat !, eventModel!.long !));
+
+
+          }});
+      }
+
+
+      _isInitialized=true;
     }
 
 
@@ -325,10 +331,12 @@ class _UpdateEventScreenState extends State<UpdateEventScreen> {
                       ),
                       Gap(8),
                       CustomField(
+
                         maxLine: 5,
                         keyboard: TextInputType.text,
                         hint: StringsManager.eventDescription.tr(),
                         controller: descController,
+
                         validator: (p0) {
                           if (p0 == null || p0.isEmpty) {
                             return StringsManager.should_dntEmpty.tr();

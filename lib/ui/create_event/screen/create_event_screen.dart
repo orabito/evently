@@ -7,10 +7,10 @@ import 'package:event_planning_app/core/reusable_componets/custom_field.dart';
 import 'package:event_planning_app/core/reusable_componets/firestore_handler.dart';
 import 'package:event_planning_app/core/strings_manager.dart';
 import 'package:event_planning_app/models/event_model.dart';
-import 'package:event_planning_app/providers/event_provider.dart';
+
 import 'package:event_planning_app/providers/location_provider.dart';
-import 'package:event_planning_app/providers/location_provider.dart';
-import 'package:event_planning_app/providers/location_provider.dart';
+
+
 import 'package:event_planning_app/providers/theme_provider.dart';
 import 'package:event_planning_app/ui/create_event/screen/pick_location_screen.dart';
 
@@ -18,7 +18,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 import 'package:provider/provider.dart';
 
 import '../../../core/assets_manager.dart';

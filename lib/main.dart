@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:event_planning_app/core/app_style.dart';
 import 'package:event_planning_app/core/prefs_helper.dart';
-import 'package:event_planning_app/providers/event_provider.dart';
+
 import 'package:event_planning_app/providers/location_provider.dart';
 import 'package:event_planning_app/providers/theme_provider.dart';
 import 'package:event_planning_app/providers/user_Provider.dart';

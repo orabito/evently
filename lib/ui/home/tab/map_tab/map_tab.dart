@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/reusable_componets/firestore_handler.dart';
 import '../../../../core/strings_manager.dart';
 import '../../../../models/event_model.dart';
-import '../home_tab/widget/event_item.dart';
+
 
 class MapTab extends StatefulWidget {
   const MapTab({super.key});

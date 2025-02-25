@@ -211,7 +211,7 @@ class _EventDetailsScreenState extends State<EventDetailsScreen> {
   }
 
   deleteEvent(EventModel eventModel) async {
-DialogUtils.showToast(StringsManager.eventDeleteSuccess, context);
+DialogUtils.showToast(StringsManager.eventDeleteSuccess.tr(), context);
    await FirestoreHandler.deleteEvent(eventModel)
     ;Navigator.pop(context);
   }
