@@ -105,7 +105,7 @@ onChanged: (value) {
     element.eventId!
         .toLowerCase()
         .contains(searchText.toLowerCase()) ||
-        element.tittle!.toLowerCase().contains(searchText.toLowerCase()))
+        element.title!.toLowerCase().contains(searchText.toLowerCase()))
         .toList();
 
   }

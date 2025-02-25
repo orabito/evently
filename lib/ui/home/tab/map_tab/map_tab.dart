@@ -65,6 +65,7 @@ class _MapTabState extends State<MapTab> {
                   children: [
                     Expanded(
                       child: GoogleMap(
+
                         mapType: MapType.normal,
                         markers: provider.markers,
                         initialCameraPosition: provider.cameraPosition,
@@ -88,6 +89,9 @@ class _MapTabState extends State<MapTab> {
                         return Text(snapshot.hasError.toString());
                       }else{
                         List<EventModel>events=snapshot.data??[];
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                          provider.updateMarkers(events);
+                        });
                         return events.isEmpty? Center(child: Text(StringsManager.noEventFound.tr()))
                             : ListView.separated(
                           padding: EdgeInsets.all(8),

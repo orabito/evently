@@ -83,7 +83,7 @@ class _EventItemState extends State<EventItem> {
                   children: [
                     Expanded(
                       child: Text(
-                      widget.event.tittle??"",
+                      widget.event.title??"",
                         style: Theme.of(context).textTheme.titleSmall,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,

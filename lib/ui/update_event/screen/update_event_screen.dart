@@ -61,7 +61,7 @@ class _UpdateEventScreenState extends State<UpdateEventScreen> {
     if(!_isInitialized){
       eventModel=ModalRoute.of(context)?.settings.arguments as EventModel?;
       if(eventModel!=null){
-        controller=TextEditingController(text: eventModel?.tittle??"");
+        controller=TextEditingController(text: eventModel?.title??"");
         descController=TextEditingController(text: eventModel?.description??"");
         selectedDate=DateTime.fromMillisecondsSinceEpoch(eventModel!.date!.millisecondsSinceEpoch);
         selectedTime = TimeOfDay.fromDateTime(eventModel!.date!.toDate());
@@ -576,7 +576,7 @@ class _UpdateEventScreenState extends State<UpdateEventScreen> {
           DialogUtils.showLoadingDialog(context);
           await FirestoreHandler.updateEvent(event:
           EventModel(
-              tittle: controller.text,
+              title: controller.text,
               description: descController.text,
               date: Timestamp.fromDate(eventDate),
               uId: FirebaseAuth.instance.currentUser!.uid,

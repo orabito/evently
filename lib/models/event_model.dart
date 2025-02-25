@@ -2,7 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class EventModel {
-  String? tittle;
+  String? title;
   String? description;
   String? category;
  Timestamp? date;
@@ -21,11 +21,11 @@ double? long;
 
     this.lat=0,
     this.long=0,
-    this.tittle,
+    this.title,
     this.uId,
   });
   EventModel.fromFireStore(Map<String,dynamic>? data){
-    tittle=data?["tittle"];
+    title=data?["title"];
     description=data?["description"];
     category=data?["category"];
     date=data?["date"];
@@ -38,7 +38,7 @@ double? long;
 
  Map<String,dynamic> toFireStore(){
 return{
-  "tittle":tittle,
+  "title":title,
   "description":description,
   "category":category,
   "date":date,

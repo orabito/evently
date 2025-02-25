@@ -83,7 +83,7 @@ class _EventDetailsScreenState extends State<EventDetailsScreen> {
               ),
               Gap(16),
               Text(
-                eventModel.tittle!,
+                eventModel.title!,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium

@@ -55,7 +55,7 @@ final Function(double,double)onPressed;
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  child: Text(eventModel.tittle!,
+                  child: Text(eventModel.title!,
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium

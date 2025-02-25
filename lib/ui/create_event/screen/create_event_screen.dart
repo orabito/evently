@@ -52,31 +52,8 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
     descController = TextEditingController();
 
   }
-  @override
-//   void didChangeDependencies() {
-//     // TODO: implement didChangeDependencies
-//     super.didChangeDependencies();
-//  eventModel=ModalRoute.of(context)?.settings.arguments as EventModel?;
-// if(eventModel!=null){
-//   controller=TextEditingController(text: eventModel?.tittle??"");
-//   descController=TextEditingController(text: eventModel?.description??"");
-//   selectedDate=DateTime.fromMillisecondsSinceEpoch(eventModel!.date!.millisecondsSinceEpoch);
-//   selectedTime = TimeOfDay.fromDateTime(eventModel!.date!.toDate());
-// selectedIndex=selectedIndexOfCategory();
-//
-//   WidgetsBinding.instance.addPostFrameCallback((_) {
-//     final locationProvider = Provider.of<LocationProvider>(context, listen: false);
-//
-//     if (eventModel!.lat != null && eventModel!.long != null) {
-//
-//       locationProvider.eventLocation=LatLng(eventModel!.lat !, eventModel!.long !);
-//
-//   }});
-//
-// }
-//
-//
-//   }
+
+
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
@@ -557,7 +534,7 @@ ThemeProvider themeProvider=Provider.of<ThemeProvider>(context);
           await FirestoreHandler.createEvent(EventModel(
             lat:provider.eventLocation!.latitude
             ,long: provider.eventLocation!.longitude,
-            tittle: controller.text,
+            title: controller.text,
             description: descController.text,
             // isWishList: false,
 
