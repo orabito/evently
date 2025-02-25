@@ -45,5 +45,19 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	 <key>NSLocationWhenInUseUsageDescription</key>
+        <string>We need your location to show nearby events</string>
+
+        <key>NSLocationAlwaysUsageDescription</key>
+        <string>We need continuous access to provide real-time updates</string>
+
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+        <string>We need background access to update your location</string>
+
+	<key>CFBundleLocalizations</key>
+    <array>
+    	<string>en</string>
+    	<string>ar</string>
+    </array>
 </dict>
 </plist>
