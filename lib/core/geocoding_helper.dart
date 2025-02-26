@@ -1,15 +1,20 @@
 
+import 'package:easy_localization/easy_localization.dart';
+import 'package:event_planning_app/core/strings_manager.dart';
 import 'package:geocoding/geocoding.dart';
 
 class GeocodingHelper {
+
   static Future<String> getShortAddressFromCoordinates(double lat, double lon) async {
     try {
       List<Placemark> placemarks = await placemarkFromCoordinates(lat, lon);
       if (placemarks.isNotEmpty) {
         Placemark place = placemarks.first;
-        // نستخدم حقل الدولة (country) مع الـ administrativeArea
-        String country = place.country?.trim() ?? "";
-        String admin = place.administrativeArea?.trim() ?? "";
+
+        String country = place.administrativeArea?.trim() ?? "";
+
+
+        String admin = place.subAdministrativeArea ?? "";
 
         String result = "";
         if (country.isNotEmpty && admin.isNotEmpty) {
@@ -20,11 +25,11 @@ class GeocodingHelper {
           result = country.toLowerCase();
         }
 
-        return result.isNotEmpty ? result : "unknown location";
+        return result.isNotEmpty ? result :StringsManager.unknownLocation.tr();
       }
-      return "unknown location";
+      return StringsManager.unknownLocation.tr();
     } catch (e) {
-      return "error retrieving location";
+      return StringsManager.errorRetrievingLocation.tr();
     }
   }
 

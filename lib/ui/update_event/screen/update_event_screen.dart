@@ -473,7 +473,9 @@ class _UpdateEventScreenState extends State<UpdateEventScreen> {
                                   } else if (snapshot.hasError) {
                                     return Text(StringsManager.errorRetrievingLocation.tr());
                                   } else {
-                                    return Text(snapshot.data ?? StringsManager.unknownLocation.tr());
+                                    final String data=snapshot.data?.tr() ?? StringsManager.unknownLocation.tr();
+                                    final finalData=context.locale.languageCode=="ar"? data.tr():data;
+                                    return Text(finalData);
                                   }
                                 },
                               )
