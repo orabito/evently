@@ -13,7 +13,7 @@ class BookEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(stream: FirestoreHandler.getAllEventsByCategoryStream(bookCategory),
+    return StreamBuilder(stream: FirestoreHandler.getAllEventsByCategoryStream(bookCategory, ),
       builder:(context, snapshot) {
         if(snapshot.connectionState==ConnectionState.waiting){
           //in loading state

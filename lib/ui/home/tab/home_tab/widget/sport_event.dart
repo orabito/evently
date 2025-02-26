@@ -13,7 +13,8 @@ class SportEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(stream: FirestoreHandler.getAllEventsByCategoryStream(sportCategory),
+  var  date=DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+    return StreamBuilder(stream: FirestoreHandler.getAllEventsByCategoryStream(sportCategory, ),
       builder:(context, snapshot) {
         if(snapshot.connectionState==ConnectionState.waiting){
           //in loading state

@@ -147,7 +147,7 @@ static Future<void> updateEvent( {required EventModel  event } ){
 
   static Stream<List<EventModel>> getAllEventsStream() async* {
     final today = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
-    var collection = getEventCollection().where("date",isGreaterThanOrEqualTo: today );
+    var collection = getEventCollection().where("date",isGreaterThanOrEqualTo: Timestamp.fromDate(today) );
     var snapshots = collection.snapshots();
     Stream<List<EventModel>> allEventsStream = snapshots
         .map((snapshot) => snapshot.docs.map((doc) => doc.data()).toList());
@@ -156,10 +156,11 @@ static Future<void> updateEvent( {required EventModel  event } ){
   }
 
   static Stream<List<EventModel>> getAllEventsByCategoryStream(String category ) async*{
-
+    final today = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+    final timestamp = today.millisecondsSinceEpoch;
     var collection = getEventCollection().where(
-       "category",isEqualTo: category
-    );
+        "category",isEqualTo: category
+    ).where("date",isGreaterThanOrEqualTo:Timestamp.fromDate(today) );
 
     var snapshots = collection.snapshots();
     Stream<List<EventModel>> allEventsStream = snapshots

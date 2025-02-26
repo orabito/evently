@@ -13,7 +13,7 @@ class BirthdayEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(stream: FirestoreHandler.getAllEventsByCategoryStream(birthdayCategory),
+    return StreamBuilder(stream: FirestoreHandler.getAllEventsByCategoryStream(birthdayCategory, ),
       builder:(context, snapshot) {
         if(snapshot.connectionState==ConnectionState.waiting){
           //in loading state
